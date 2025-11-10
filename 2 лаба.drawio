@@ -333,7 +333,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="2LM5D6bQDBR4ZPKaFMxO" name="классов">
-    <mxGraphModel dx="1690" dy="717" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2013" dy="1296" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -512,6 +512,27 @@
             <mxPoint x="311" y="431" as="sourcePoint" />
             <mxPoint x="287" y="497" as="targetPoint" />
             <mxPoint x="2" y="-3" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5AoMUvgFMBHv4skLZXh6-1" value="API" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="819" y="-2" width="140" height="127" as="geometry" />
+        </mxCell>
+        <mxCell id="5AoMUvgFMBHv4skLZXh6-2" value="+ createSign(&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;patient: Patient,&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;doctor: Doctor,&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;service: Service,&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;datetime: String&lt;/div&gt;&lt;div&gt;):&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Boolean&lt;/span&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="5AoMUvgFMBHv4skLZXh6-1">
+          <mxGeometry y="26" width="140" height="101" as="geometry" />
+        </mxCell>
+        <mxCell id="5AoMUvgFMBHv4skLZXh6-6" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;exitX=0.464;exitY=1.02;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="5AoMUvgFMBHv4skLZXh6-2" target="iw2qi2RCGokloN7nGmKO-3">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="967" y="223" as="sourcePoint" />
+            <mxPoint x="1127" y="223" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="884" y="155" />
+              <mxPoint x="769" y="155" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5AoMUvgFMBHv4skLZXh6-7" value="-controller" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="5AoMUvgFMBHv4skLZXh6-6">
+          <mxGeometry x="-0.0061" y="-2" relative="1" as="geometry">
+            <mxPoint x="-23" y="14" as="offset" />
           </mxGeometry>
         </mxCell>
       </root>
