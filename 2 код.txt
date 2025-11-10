@@ -1,0 +1,106 @@
+class License
+{
+    public string date;
+    public string licenseNumber;
+
+    public bool isExpired() { }
+}
+
+class Specialization
+{
+    public string profession;
+}
+
+class Service
+{
+    public string name;
+    public float price;
+}
+
+class Doctor
+{
+    public string name;
+    public License license;
+    public Specialization[] specializations;
+    public Service[] services;
+
+    public bool checkService(Service serive) { }
+    public bool checkLicense() { }
+    public string[] getSchedule() { }
+}
+
+class Patient
+{
+    public string name;
+    public string phone;
+    public string email;
+}
+
+class Sign
+{
+    public string datetime;
+    public string status;
+    public Doctor doctor;
+    public Pacient pacient;
+    public Service service;
+}
+
+class DB
+{
+    public string dbPath;
+
+    public void delete(Sign sign) { }
+    public void add(Sign sign) { }
+}
+
+interface IControler
+{
+    public bool createSign(
+        Patient pacient,
+        Doctor doctor,
+        Service service
+    );
+}
+
+class Controller : IControler
+{
+    DB db;
+
+    public bool createSign(
+        Patient pacient,
+        Doctor doctor,
+        Service service,
+        string datetime
+    )
+    {
+        if (!doctor.checkLicense()) return false;
+        if (!doctor.checkService(service)) return false;
+        if (!checkTime(doctor, datetime)) return false;
+        Sign sign = new Sign();
+        db.add(sign);
+        return true;
+    }
+    public bool editSignDatetime(
+        Sign sign,
+        string datetime
+    )
+    { }
+    public bool checkTime(
+        Doctor doctor,
+        string datetime
+    )
+    {
+        var schedule = doctor.getSchedule();
+        //return !schedule.Contains(datetime);
+        var dtAvailable = false;
+        foreach (var dt in schedule)
+        {
+            if (dt == datetime)
+            {
+                dtAvailable = true;
+                break;
+            }
+        }
+        return dtAvailable;
+    }
+}
