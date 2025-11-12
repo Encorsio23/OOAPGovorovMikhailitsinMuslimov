@@ -17,15 +17,26 @@ class Service
     public float price;
 }
 
-class Doctor
+abstract class BaseDoctor
 {
     public string name;
     public License license;
     public Specialization[] specializations;
     public Service[] services;
 
-    public bool checkService(Service serive) { }
+    public bool checkService(Service service) { }
     public bool checkLicense() { }
+    public string[] getSchedule() { }
+}
+
+class InvitedDoctor
+{
+    public bool checkService(Service serive) { }
+    public string[] getSchedule() { }
+}
+class RegularDoctor
+{
+    public bool checkService(Service serive) { }
     public string[] getSchedule() { }
 }
 
@@ -40,8 +51,8 @@ class Sign
 {
     public string datetime;
     public string status;
-    public Doctor doctor;
-    public Pacient pacient;
+    public BaseDoctor doctor;
+    public Patient pacient;
     public Service service;
 }
 
@@ -53,22 +64,13 @@ class DB
     public void add(Sign sign) { }
 }
 
-interface IControler
-{
-    public bool createSign(
-        Patient pacient,
-        Doctor doctor,
-        Service service
-    );
-}
-
-class Controller : IControler
+class Controller
 {
     DB db;
 
     public bool createSign(
         Patient pacient,
-        Doctor doctor,
+        BaseDoctor doctor,
         Service service,
         string datetime
     )
@@ -86,7 +88,7 @@ class Controller : IControler
     )
     { }
     public bool checkTime(
-        Doctor doctor,
+        BaseDoctor doctor,
         string datetime
     )
     {
