@@ -1,4 +1,4 @@
-class License
+public class License
 {
     public string date;
     public string licenseNumber;
@@ -6,48 +6,49 @@ class License
     public bool isExpired() { }
 }
 
-class Specialization
+public class Specialization
 {
     public string profession;
 }
 
-class Service
+public class Service
 {
     public string name;
     public float price;
 }
 
-abstract class BaseDoctor
+public abstract class BaseDoctor
 {
     public string name;
     public License license;
     public Specialization[] specializations;
     public Service[] services;
 
-    public bool checkService(Service service) { }
-    public bool checkLicense() { }
-    public string[] getSchedule() { }
+    public abstract bool checkService(Service service);
+    public bool checkLicense();
+    public abstract string[] getSchedule();
 }
 
-class InvitedDoctor
+public abstract class InvitedDoctor : BaseDoctor
 {
-    public bool checkService(Service serive) { }
-    public string[] getSchedule() { }
-}
-class RegularDoctor
-{
-    public bool checkService(Service serive) { }
-    public string[] getSchedule() { }
+    public bool checkService(Service serive) {}
+    public string[] getSchedule() {}
 }
 
-class Patient
+public abstract class RegularDoctor : BaseDoctor
+{
+    public bool checkService(Service serive) {}
+    public string[] getSchedule() {}
+}
+
+public class Patient
 {
     public string name;
     public string phone;
     public string email;
 }
 
-class Sign
+public class Sign
 {
     public string datetime;
     public string status;
@@ -56,7 +57,7 @@ class Sign
     public Service service;
 }
 
-class DB
+public class DB
 {
     public string dbPath;
 
@@ -64,7 +65,7 @@ class DB
     public void add(Sign sign) { }
 }
 
-class Controller
+public class Controller
 {
     DB db;
 
